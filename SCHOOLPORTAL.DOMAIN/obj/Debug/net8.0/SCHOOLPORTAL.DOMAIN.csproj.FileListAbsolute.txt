@@ -1,0 +1,12 @@
+/Users/charles/Desktop/SchoolPortal/SCHOOLPORTAL.DOMAIN/bin/Debug/net8.0/SCHOOLPORTAL.DOMAIN.deps.json
+/Users/charles/Desktop/SchoolPortal/SCHOOLPORTAL.DOMAIN/bin/Debug/net8.0/SCHOOLPORTAL.DOMAIN.dll
+/Users/charles/Desktop/SchoolPortal/SCHOOLPORTAL.DOMAIN/bin/Debug/net8.0/SCHOOLPORTAL.DOMAIN.pdb
+/Users/charles/Desktop/SchoolPortal/SCHOOLPORTAL.DOMAIN/obj/Debug/net8.0/SCHOOLPORTAL.DOMAIN.GeneratedMSBuildEditorConfig.editorconfig
+/Users/charles/Desktop/SchoolPortal/SCHOOLPORTAL.DOMAIN/obj/Debug/net8.0/SCHOOLPORTAL.DOMAIN.AssemblyInfoInputs.cache
+/Users/charles/Desktop/SchoolPortal/SCHOOLPORTAL.DOMAIN/obj/Debug/net8.0/SCHOOLPORTAL.DOMAIN.AssemblyInfo.cs
+/Users/charles/Desktop/SchoolPortal/SCHOOLPORTAL.DOMAIN/obj/Debug/net8.0/SCHOOLPORTAL.DOMAIN.csproj.CoreCompileInputs.cache
+/Users/charles/Desktop/SchoolPortal/SCHOOLPORTAL.DOMAIN/obj/Debug/net8.0/SCHOOLPORTAL.DOMAIN.sourcelink.json
+/Users/charles/Desktop/SchoolPortal/SCHOOLPORTAL.DOMAIN/obj/Debug/net8.0/SCHOOLPORTAL.DOMAIN.dll
+/Users/charles/Desktop/SchoolPortal/SCHOOLPORTAL.DOMAIN/obj/Debug/net8.0/refint/SCHOOLPORTAL.DOMAIN.dll
+/Users/charles/Desktop/SchoolPortal/SCHOOLPORTAL.DOMAIN/obj/Debug/net8.0/SCHOOLPORTAL.DOMAIN.pdb
+/Users/charles/Desktop/SchoolPortal/SCHOOLPORTAL.DOMAIN/obj/Debug/net8.0/ref/SCHOOLPORTAL.DOMAIN.dll

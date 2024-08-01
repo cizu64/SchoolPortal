@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/SCHOOLPORTAL.APPLICATION.props" />
+</Project>
