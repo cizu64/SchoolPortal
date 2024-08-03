@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "cbk8hYW/UZ/yqIs7D7Gcx4hgzKcSJ7JlZ241QPipzJ2/Rl7wyHyzWfejrX6PERyRZEhNNt7NJAzor4IC6BK8qA==",
+  "dgSpecHash": "tSWanM33iZZyDPq02atIDli00ygi4Yc9AxsJQLr65/FIbA2c0VTXj3chJ857CQcElPOXJ8gjgHiyTrv9oIu48w==",
   "success": true,
   "projectFilePath": "/Users/charles/Desktop/SchoolPortal/SCHOOLPORTAL.APPLICATION/SCHOOLPORTAL.APPLICATION.csproj",
   "expectedPackageFiles": [
     "/Users/charles/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/Users/charles/.nuget/packages/mediatr/12.4.0/mediatr.12.4.0.nupkg.sha512",
+    "/Users/charles/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
     "/Users/charles/.nuget/packages/microsoft.aspnetcore.openapi/8.0.0/microsoft.aspnetcore.openapi.8.0.0.nupkg.sha512",
     "/Users/charles/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "/Users/charles/.nuget/packages/microsoft.codeanalysis.analyzers/3.3.3/microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",

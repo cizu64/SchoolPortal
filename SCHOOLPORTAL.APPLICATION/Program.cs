@@ -1,5 +1,9 @@
 using Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using SeedWork;
+using Application;
+using MediatR;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,10 +13,15 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped<DepartmentQuery>();
+
 builder.Services.AddDbContext<SchoolContext>(options=>
 {
    options.UseNpgsql(builder.Configuration["ConnectionString"]);
 });
+builder.Services.AddMediatR(m=>{m.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly());});
+
 
 var app = builder.Build();
 
