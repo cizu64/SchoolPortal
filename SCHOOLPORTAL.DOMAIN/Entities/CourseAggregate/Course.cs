@@ -13,4 +13,6 @@ public class Course : Entity, IAggregateRoot
    public string Name  { get; private set; }   
    public bool IsActive  { get; private set; } = true;  
 
+   public Department Department{ get; private set; }
+
 }

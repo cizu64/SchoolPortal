@@ -1,7 +1,7 @@
 namespace Entities;
 using SeedWork;
 
-public class Department : Entity, IAggregateRoot
+public class Department : Entity
 {
     public Department(string name)
     {
@@ -10,4 +10,6 @@ public class Department : Entity, IAggregateRoot
 
     public string Name{get;private set;}
     public bool IsActive{get;private set;}=true;
+
+
 }

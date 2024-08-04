@@ -11,6 +11,8 @@ public class StudentConfiguration:IEntityTypeConfiguration<Student>
         var navigation = builder.Metadata.FindNavigation(nameof(Student.StudentCourses));
         navigation.SetPropertyAccessMode(PropertyAccessMode.Field);
 
+        //builder.Ignore(d=>d.DomainEvents);
+
         builder.OwnsOne(s=>s.Address, a=>
         {
             a.WithOwner();

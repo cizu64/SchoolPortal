@@ -4,6 +4,7 @@ using SeedWork;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Linq.Expressions;
+using Specifications;
 public class GenericRepository<T> : IGenericRepository<T> where T : Entity
 {
     protected readonly SchoolContext _context;
@@ -11,7 +12,11 @@ public class GenericRepository<T> : IGenericRepository<T> where T : Entity
 
     public IUnitOfWork UnitOfWork => _context;
 
-
+    public IEnumerable<T> Specify(ISpecification<T> spec)
+    {
+        var includes = spec.Includes.Aggregate(_context.Set<T>().AsQueryable(), (current, include)=>current.Include(include));
+        return includes.Where(spec.Criteria).AsEnumerable();
+    }
     public GenericRepository(SchoolContext context)
     {
         _context = context;

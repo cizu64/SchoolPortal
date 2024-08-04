@@ -1,3 +1,5 @@
+using MediatR;
+
 namespace SeedWork;
 
 public interface IUnitOfWork : IDisposable

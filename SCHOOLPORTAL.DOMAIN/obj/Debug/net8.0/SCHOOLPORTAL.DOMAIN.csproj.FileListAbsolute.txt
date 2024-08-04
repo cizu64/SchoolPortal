@@ -10,3 +10,4 @@
 /Users/charles/Desktop/SchoolPortal/SCHOOLPORTAL.DOMAIN/obj/Debug/net8.0/refint/SCHOOLPORTAL.DOMAIN.dll
 /Users/charles/Desktop/SchoolPortal/SCHOOLPORTAL.DOMAIN/obj/Debug/net8.0/SCHOOLPORTAL.DOMAIN.pdb
 /Users/charles/Desktop/SchoolPortal/SCHOOLPORTAL.DOMAIN/obj/Debug/net8.0/ref/SCHOOLPORTAL.DOMAIN.dll
+/Users/charles/Desktop/SchoolPortal/SCHOOLPORTAL.DOMAIN/obj/Debug/net8.0/SCHOOLPORTAL.DOMAIN.csproj.AssemblyReference.cache

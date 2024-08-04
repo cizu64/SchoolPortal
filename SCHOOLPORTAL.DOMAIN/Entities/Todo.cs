@@ -18,11 +18,11 @@ public class Todo: Entity, IAggregateRoot
     public DateTime? DateCompleted{get;private set;} = null;
 
     //first behavior
-    public void CompleteTodo(DateTime dateCompleted, Todo todo)
+    public void CompleteTodo(DateTime dateCompleted)
     {
-        todo.IsCompleted = true;
-        todo.DateCompleted = dateCompleted;
-        todo.IsActive=true;
+        IsCompleted = true;
+        DateCompleted = dateCompleted;
+        IsActive=true;
     }
 
     public void CompleteTodo(){}
