@@ -6,6 +6,12 @@ using MediatR;
 using System.Reflection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using System.Reflection;
+using Microsoft.Net.Http.Headers;
+using System.Net.Mime;
+using System.Reflection;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +23,42 @@ builder.Services.AddControllers();
 
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<DepartmentQuery>();
+builder.Services.AddScoped<StudentQuery>();
+builder.Services.AddScoped<Authenticate>();
+
+
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, new OpenApiSecurityScheme
+    {
+        Description = @"JWT Authorization header using the Bearer scheme. \r\n\r\n 
+    Enter token",
+        Name = "Authorization",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.Http,
+        BearerFormat = "JWT",
+        Scheme = "Bearer"
+    });
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement()
+    {
+            {
+                new OpenApiSecurityScheme
+                {
+                    Reference = new OpenApiReference
+                    {
+                        Type = ReferenceType.SecurityScheme,
+                        Id = "Bearer"
+                    }
+                },
+                new List<string>()
+            }
+    });
+
+    // var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    // options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename), true);
+});
+
+builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
