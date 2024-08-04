@@ -3,6 +3,7 @@ using Infrastructure;
 using SeedWork;
 using Entities;
 using System.Linq;
+using Specifications;
 public class DepartmentQuery
 {
    private readonly IGenericRepository<Department> _departmentRepo;
@@ -13,7 +14,7 @@ public class DepartmentQuery
 
    public async Task<IEnumerable<DepartmentResponse>> GetDepartments()
    {
-      var department = await _departmentRepo.GetAllAsync();
-      return department.Select(d => new DepartmentResponse{ Name = d.Name});
+      var activeDepartment = _departmentRepo.Specify(new GetActiveDepartment());
+      return activeDepartment.Select(d => new DepartmentResponse{ Name = d.Name});
    }
 }

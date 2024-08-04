@@ -23,7 +23,7 @@ public class DepartmentCommandHandler: IRequestHandler<DepartmentCommand, Task>
     public async Task<Task> Handle(DepartmentCommand command, CancellationToken cacellationToken)
     {
         var department = new Department(command.Name);
-        department.AddDepartment();
+        department.AddDepartment();//behavior that adds domain event
         await _departmentRepo.AddAsync(department); //add to repo
         await _departmentRepo.UnitOfWork.SaveAsync(cacellationToken);
         return Task.CompletedTask;
