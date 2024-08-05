@@ -1,8 +1,8 @@
 namespace Infrastructure;
 using Entities;
-public class SchoolContextSeed
+public static class SchoolContextSeed
 {
-    public static async Task SeedAsync(SchoolContext context)
+    public static async Task SeedAsync(this SchoolContext context)
     {
         try
         {

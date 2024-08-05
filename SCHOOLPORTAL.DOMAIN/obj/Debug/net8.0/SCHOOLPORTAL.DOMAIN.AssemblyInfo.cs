@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SCHOOLPORTAL.DOMAIN")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32d5831fb304f2089cd0eff5cbd0cd0944d74383")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40666e5699a1936bc00845e9d7aad7e45c51ac81")]
 [assembly: System.Reflection.AssemblyProductAttribute("SCHOOLPORTAL.DOMAIN")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SCHOOLPORTAL.DOMAIN")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

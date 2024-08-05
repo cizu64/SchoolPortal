@@ -109,7 +109,7 @@ async Task SeedAsync(WebApplication host)
     using (var scope = host.Services.CreateScope())
     {
         var services = scope.ServiceProvider;
-        var context = services.GetRequiredService<SchoolContext>();
-        await SchoolContextSeed.SeedAsync(context);
+        SchoolContext context = services.GetRequiredService<SchoolContext>();
+        await context.SeedAsync();
     }
 }
