@@ -2,7 +2,6 @@ using System.Linq.Expressions;
 using SeedWork;
 namespace Specifications;
 
-
 public class BaseSpecification<T> : ISpecification<T> where T : Entity
 {
     public BaseSpecification(Expression<Func<T, bool>> criteria)

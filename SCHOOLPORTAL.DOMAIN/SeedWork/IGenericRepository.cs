@@ -4,6 +4,7 @@ namespace SeedWork;
 public interface IGenericRepository<T> where T : Entity
 {
    IEnumerable<T> Specify(ISpecification<T> spec);
+   IEnumerable<T> Specify2(ISpecification<T> spec);
    IUnitOfWork UnitOfWork{get;}
    Task<T> AddAsync(T entity);
    void DeleteAsync(T entity);

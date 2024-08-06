@@ -24,6 +24,19 @@ public class GenericRepository<T> : IGenericRepository<T> where T : Entity
         var includes = spec.Includes.Aggregate(_context.Set<T>().AsQueryable(), (current, include) => current.Include(include));
         return includes.Where(spec.Criteria).AsEnumerable();
     }
+
+    //if your dont understand the first Specify version, you can use this
+    public IEnumerable<T> Specify2(ISpecification<T> spec)
+    {
+        var includes = spec.Includes;
+        IQueryable<T>? query = _set;
+        foreach(Expression<Func<T,object>> include in includes)
+        {
+            query= query.Include(include);
+        }
+        return query.Where(spec.Criteria).AsEnumerable();
+    }
+
     public async Task<T> AddAsync(T entity)
     {
         await _set.AddAsync(entity);
