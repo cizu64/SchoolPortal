@@ -34,7 +34,8 @@ public class SchoolContext : DbContext, IUnitOfWork
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Student>(s=>
+
+         modelBuilder.Entity<Student>(s=>
         {
             s.Ignore(d=>d.DomainEvents);
         });

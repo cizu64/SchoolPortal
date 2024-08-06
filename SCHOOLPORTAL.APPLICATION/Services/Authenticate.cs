@@ -6,6 +6,7 @@ using System.Security.Claims;
 using SeedWork;
 using Infrastructure;
 using Entities;
+using Specifications;
 public class Authenticate
 {
     private readonly IGenericRepository<Student> _studentRepository;
@@ -17,7 +18,8 @@ public class Authenticate
     }
    public async Task<IResponseData> CreateToken(string email, string password)
    {
-     var student = await _studentRepository.GetAsync(s=>s.Email.ToLower() == email.ToLower() && s.Password == password);
+     var spec = new BaseSpecification<Student>(s=>s.Email.ToLower() == email.ToLower() && s.Password == password);
+     var student = await _studentRepository.GetAsync(spec);
      if (student == null) return new Error{detail = "User not found"};
 
      var claims = new List<Claim>

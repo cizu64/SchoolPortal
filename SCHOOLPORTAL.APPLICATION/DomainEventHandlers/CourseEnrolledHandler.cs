@@ -3,6 +3,8 @@ using DomainEvents;
 using MediatR;
 using SeedWork;
 using Entities;
+using Specifications;
+
 public class CourseEnrolledHandler: INotificationHandler<CourseEnrolledEvent>
 {
     private readonly IGenericRepository<Todo> _todoRepo;
@@ -15,7 +17,8 @@ public class CourseEnrolledHandler: INotificationHandler<CourseEnrolledEvent>
 
    public async Task Handle(CourseEnrolledEvent notification, CancellationToken cancellationToken)
    {
-      var course = await _courseRepo.GetAsync(c=>c.Id == notification.CourseId);
+      var spec = new BaseSpecification<Course>(c=>c.Id == notification.CourseId);
+      var course = await _courseRepo.GetAsync(spec);
       await _todoRepo.AddAsync(new Todo(notification.StudentId,"New Course", $"You have enrolled for {course.Name} course. Start reading!"));
       await _todoRepo.UnitOfWork.SaveAsync(cancellationToken);
    }

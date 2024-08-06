@@ -4,7 +4,7 @@ using MediatR;
 using SeedWork;
 using Entities;
 using System.Text.Json;
-
+using Specifications;
 public class EnrollCourseCommand : IRequest<IResponseData>
 {
     public int StudentId { get; }
@@ -28,7 +28,8 @@ public class EnrollCourseCommandHandler : IRequestHandler<EnrollCourseCommand, I
 
     public async Task<IResponseData> Handle(EnrollCourseCommand command, CancellationToken cancellationToken)
     {
-        var student = await _studentRepo.GetAsync(s=>s.Id==command.StudentId);
+        var spec = new BaseSpecification<Student>(s=>s.Id==command.StudentId);
+        var student = await _studentRepo.GetAsync(spec);
         student.EnrollCourse(student.Id,command.CourseId);
         
         await _studentCourseRepo.AddAsync(student.StudentCourses.FirstOrDefault());

@@ -12,33 +12,42 @@ public class GenericRepository<T> : IGenericRepository<T> where T : Entity
 
     public IUnitOfWork UnitOfWork => _context;
 
-    public IEnumerable<T> Specify(ISpecification<T> spec)
-    {
-        var includes = spec.Includes.Aggregate(_context.Set<T>().AsQueryable(), (current, include)=>current.Include(include));
-        return includes.Where(spec.Criteria).AsEnumerable();
-    }
+
     public GenericRepository(SchoolContext context)
     {
         _context = context;
         _set = _context.Set<T>();
     }
+
+    public IEnumerable<T> Specify(ISpecification<T> spec)
+    {
+        var includes = spec.Includes.Aggregate(_context.Set<T>().AsQueryable(), (current, include) => current.Include(include));
+        return includes.Where(spec.Criteria).AsEnumerable();
+    }
     public async Task<T> AddAsync(T entity)
     {
-       await _set.AddAsync(entity);
-       return entity;
+        await _set.AddAsync(entity);
+        return entity;
     }
 
     public void DeleteAsync(T entity)
     {
-       _set.Remove(entity);
+        _set.Remove(entity);
     }
 
-    public async Task<T> GetAsync(Expression<Func<T,bool>> predicate)
+    // public async Task<T> GetAsync(Expression<Func<T, bool>> predicate)
+    // {
+    //     var data = await _set.FirstOrDefaultAsync(predicate);
+    //     return data;
+    // }
+
+    public async Task<T> GetAsync(ISpecification<T> spec)
     {
-        var data = await _set.FirstOrDefaultAsync(predicate);
+        var includes = spec.Includes.Aggregate(_context.Set<T>().AsQueryable(), (current, include) => current.Include(include));
+        var data = await includes.FirstOrDefaultAsync(spec.Criteria);
         return data;
     }
-   
+
     public async Task<IReadOnlyList<T>> GetAllAsync()
     {
         return await _set.ToListAsync();
