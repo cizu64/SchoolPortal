@@ -1,0 +1,13 @@
+/Users/charles/Desktop/SchoolPortal/MESSAGEBUS/bin/Debug/net9.0/MESSAGEBUS.deps.json
+/Users/charles/Desktop/SchoolPortal/MESSAGEBUS/bin/Debug/net9.0/MESSAGEBUS.dll
+/Users/charles/Desktop/SchoolPortal/MESSAGEBUS/bin/Debug/net9.0/MESSAGEBUS.pdb
+/Users/charles/Desktop/SchoolPortal/MESSAGEBUS/obj/Debug/net9.0/MESSAGEBUS.csproj.AssemblyReference.cache
+/Users/charles/Desktop/SchoolPortal/MESSAGEBUS/obj/Debug/net9.0/MESSAGEBUS.GeneratedMSBuildEditorConfig.editorconfig
+/Users/charles/Desktop/SchoolPortal/MESSAGEBUS/obj/Debug/net9.0/MESSAGEBUS.AssemblyInfoInputs.cache
+/Users/charles/Desktop/SchoolPortal/MESSAGEBUS/obj/Debug/net9.0/MESSAGEBUS.AssemblyInfo.cs
+/Users/charles/Desktop/SchoolPortal/MESSAGEBUS/obj/Debug/net9.0/MESSAGEBUS.csproj.CoreCompileInputs.cache
+/Users/charles/Desktop/SchoolPortal/MESSAGEBUS/obj/Debug/net9.0/MESSAGEBUS.sourcelink.json
+/Users/charles/Desktop/SchoolPortal/MESSAGEBUS/obj/Debug/net9.0/MESSAGEBUS.dll
+/Users/charles/Desktop/SchoolPortal/MESSAGEBUS/obj/Debug/net9.0/refint/MESSAGEBUS.dll
+/Users/charles/Desktop/SchoolPortal/MESSAGEBUS/obj/Debug/net9.0/MESSAGEBUS.pdb
+/Users/charles/Desktop/SchoolPortal/MESSAGEBUS/obj/Debug/net9.0/ref/MESSAGEBUS.dll

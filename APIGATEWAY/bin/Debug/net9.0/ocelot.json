@@ -1,0 +1,64 @@
+{
+    "GlobalConfiguration": {
+        "BaseUrl": "https://localhost:7204/"
+    },
+    "Routes": [
+        {
+            "UpstreamPathTemplate": "/microservice/one/add/log{parms}",
+            "UpstreamHttpMethod": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE",
+                "HEAD"
+            ],
+            "DownStreamPathTemplate": "/api/Log/add",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": "7284"
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/microservice/one/logs{parms}",
+            "UpstreamHttpMethod": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE",
+                "HEAD"
+            ],
+            "DownStreamPathTemplate": "/api/Log/logs",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": "7284"
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/microservice/two{parms}",
+            "UpstreamHttpMethod": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE",
+                "HEAD"
+            ],
+            "DownStreamPathTemplate": "/weatherforecast",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": "7098"
+                }
+            ]
+        }
+    ]
+}

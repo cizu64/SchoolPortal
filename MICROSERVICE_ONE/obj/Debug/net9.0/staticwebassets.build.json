@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "eqMqN11DWMLz+oHNpQx4qHUS2WqydDWdU+4oUdC8OHg=",
+  "Source": "MICROSERVICE_ONE",
+  "BasePath": "_content/MICROSERVICE_ONE",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "XHyXeFd2sCnPLI38ihr4gKEWNU+ZXm9HEj1hWq7KLEA=",
+  "Source": "MICROSERVICE_TWO",
+  "BasePath": "_content/MICROSERVICE_TWO",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
