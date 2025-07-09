@@ -655,12 +655,6 @@
       "System.Text.Json/8.0.4": {
         "dependencies": {
           "System.Text.Encodings.Web": "8.0.0"
-        },
-        "runtime": {
-          "lib/net8.0/System.Text.Json.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.724.31311"
-          }
         }
       },
       "System.Threading.Channels/6.0.0": {},
@@ -669,7 +663,10 @@
           "MediatR": "12.4.0"
         },
         "runtime": {
-          "SCHOOLPORTAL.DOMAIN.dll": {}
+          "SCHOOLPORTAL.DOMAIN.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "SCHOOLPORTAL.INFRASTRUCTURE/1.0.0": {
@@ -679,7 +676,10 @@
           "SCHOOLPORTAL.DOMAIN": "1.0.0"
         },
         "runtime": {
-          "SCHOOLPORTAL.INFRASTRUCTURE.dll": {}
+          "SCHOOLPORTAL.INFRASTRUCTURE.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

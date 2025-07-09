@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "LRJSxwR+iIsZxxAVrwkwu4GX56tjCgWPTx1o1U1z36w=",
+  "Hash": "28+XqqF+9BPdogCG/MOZxCFm/J9kIB8pEREscG1vmWQ=",
   "Source": "SCHOOLPORTAL.APPLICATION",
   "BasePath": "_content/SCHOOLPORTAL.APPLICATION",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

@@ -22,7 +22,7 @@ namespace SCHOOLPORTAL.INFRASTRUCTURE.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("SeedWork.Entity", b =>
+            modelBuilder.Entity("Entities.Course", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -32,24 +32,6 @@ namespace SCHOOLPORTAL.INFRASTRUCTURE.Migrations
 
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasMaxLength(13)
-                        .HasColumnType("character varying(13)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Entity");
-
-                    b.HasDiscriminator().HasValue("Entity");
-
-                    b.UseTphMappingStrategy();
-                });
-
-            modelBuilder.Entity("Entities.Course", b =>
-                {
-                    b.HasBaseType("SeedWork.Entity");
 
                     b.Property<int>("DepartmentId")
                         .HasColumnType("integer");
@@ -61,21 +43,23 @@ namespace SCHOOLPORTAL.INFRASTRUCTURE.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.ToTable("Entity", t =>
-                        {
-                            t.Property("IsActive")
-                                .HasColumnName("Course_IsActive");
+                    b.HasKey("Id");
 
-                            t.Property("Name")
-                                .HasColumnName("Course_Name");
-                        });
+                    b.HasIndex("DepartmentId");
 
-                    b.HasDiscriminator().HasValue("Course");
+                    b.ToTable("Course");
                 });
 
             modelBuilder.Entity("Entities.Department", b =>
                 {
-                    b.HasBaseType("SeedWork.Entity");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
@@ -84,24 +68,24 @@ namespace SCHOOLPORTAL.INFRASTRUCTURE.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.ToTable("Entity", t =>
-                        {
-                            t.Property("IsActive")
-                                .HasColumnName("Department_IsActive");
+                    b.HasKey("Id");
 
-                            t.Property("Name")
-                                .HasColumnName("Department_Name");
-                        });
-
-                    b.HasDiscriminator().HasValue("Department");
+                    b.ToTable("Department");
                 });
 
             modelBuilder.Entity("Entities.Student", b =>
                 {
-                    b.HasBaseType("SeedWork.Entity");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<int>("Age")
                         .HasColumnType("integer");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -123,35 +107,47 @@ namespace SCHOOLPORTAL.INFRASTRUCTURE.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.HasDiscriminator().HasValue("Student");
+                    b.HasKey("Id");
+
+                    b.ToTable("Student");
                 });
 
             modelBuilder.Entity("Entities.StudentCourse", b =>
                 {
-                    b.HasBaseType("SeedWork.Entity");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<int>("CourseId")
                         .HasColumnType("integer");
 
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<int>("StudentId")
                         .HasColumnType("integer");
 
+                    b.HasKey("Id");
+
                     b.HasIndex("StudentId");
 
-                    b.ToTable("Entity", t =>
-                        {
-                            t.Property("StudentId")
-                                .HasColumnName("StudentCourse_StudentId");
-                        });
-
-                    b.HasDiscriminator().HasValue("StudentCourse");
+                    b.ToTable("StudentCourse");
                 });
 
             modelBuilder.Entity("Entities.Todo", b =>
                 {
-                    b.HasBaseType("SeedWork.Entity");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime?>("DateCompleted")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DateCreated")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Description")
@@ -171,7 +167,20 @@ namespace SCHOOLPORTAL.INFRASTRUCTURE.Migrations
                     b.Property<int>("StudentId")
                         .HasColumnType("integer");
 
-                    b.HasDiscriminator().HasValue("Todo");
+                    b.HasKey("Id");
+
+                    b.ToTable("Todo");
+                });
+
+            modelBuilder.Entity("Entities.Course", b =>
+                {
+                    b.HasOne("Entities.Department", "Department")
+                        .WithMany()
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Department");
                 });
 
             modelBuilder.Entity("Entities.Student", b =>
@@ -204,7 +213,7 @@ namespace SCHOOLPORTAL.INFRASTRUCTURE.Migrations
 
                             b1.HasKey("StudentId");
 
-                            b1.ToTable("Entity");
+                            b1.ToTable("Student");
 
                             b1.WithOwner()
                                 .HasForeignKey("StudentId");

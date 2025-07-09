@@ -1,0 +1,6 @@
+@MICROSERVICE_TWO_HostAddress = http://localhost:5144
+
+GET {{MICROSERVICE_TWO_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
